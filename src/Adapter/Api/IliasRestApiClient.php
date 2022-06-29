@@ -46,6 +46,7 @@ use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\User\UserIdDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\UserFavourite\UserFavouriteDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\UserRole\UserRoleDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Api\RestApi;
+use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\ParseHttp\ParseHttpAuthorization_;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\ParseHttpBasic\ParseHttpBasicAuthorization_;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\Schema\DefaultAuthorizationSchema;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\BodyDto;
@@ -3807,7 +3808,8 @@ class IliasRestApiClient
     ) : mixed {
         $headers = [
             DefaultHeaderKey::ACCEPT->value        => DefaultBodyType::JSON->value,
-            DefaultHeaderKey::AUTHORIZATION->value => DefaultAuthorizationSchema::BASIC->value . base64_encode($this->ilias_rest_api_client_config->client . "/"
+            DefaultHeaderKey::AUTHORIZATION->value => DefaultAuthorizationSchema::BASIC->value . ParseHttpAuthorization_::SPLIT_SCHEMA_PARAMETERS
+                . base64_encode($this->ilias_rest_api_client_config->client . "/"
                     . $this->ilias_rest_api_client_config->user . ParseHttpBasicAuthorization_::SPLIT_USER_PASSWORD . $this->ilias_rest_api_client_config->password),
             DefaultHeaderKey::USER_AGENT->value    => "flux-ilias-api"
         ];
