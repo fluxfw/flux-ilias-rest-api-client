@@ -1,0 +1,13 @@
+{
+    "version": "2022-06-27-2",
+    "description": "ILIAS Rest Api Client",
+    "topics": [
+        "api",
+        "client",
+        "ilias",
+        "library",
+        "php",
+        "rest"
+    ],
+    "homepage": "https://github.com/flux-eco/flux-ilias-rest-api-client"
+}
