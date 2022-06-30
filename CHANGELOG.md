@@ -4,7 +4,7 @@
 
 Changes:
 
-\-
+- Not use CURLFile directly
 
 Get build:
 

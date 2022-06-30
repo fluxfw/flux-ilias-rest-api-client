@@ -2,7 +2,6 @@
 
 namespace FluxIliasRestApiClient\Adapter\Api;
 
-use CURLFile;
 use Exception;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Category\CategoryDiffDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Category\CategoryDto;
@@ -2837,7 +2836,7 @@ class IliasRestApiClient
             FormDataBodyDto::new(
                 null,
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -2857,7 +2856,7 @@ class IliasRestApiClient
             FormDataBodyDto::new(
                 null,
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3679,7 +3678,7 @@ class IliasRestApiClient
                     "replace" => $replace
                 ],
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3702,7 +3701,7 @@ class IliasRestApiClient
                     "replace" => $replace
                 ],
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3725,7 +3724,7 @@ class IliasRestApiClient
                     "replace" => $replace
                 ],
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3745,7 +3744,7 @@ class IliasRestApiClient
             FormDataBodyDto::new(
                 null,
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3765,7 +3764,7 @@ class IliasRestApiClient
             FormDataBodyDto::new(
                 null,
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
@@ -3785,7 +3784,7 @@ class IliasRestApiClient
             FormDataBodyDto::new(
                 null,
                 [
-                    "file" => new CURLFile($file)
+                    "file" => $file
                 ]
             )
         );
