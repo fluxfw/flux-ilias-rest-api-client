@@ -2174,7 +2174,7 @@ class IliasRestApiClient
     }
 
 
-    public function hasAccessInObject(int $ref_id, int $user_id, Permission $permission) : bool
+    public function hasAccessByRefIdByUserId(int $ref_id, int $user_id, Permission $permission) : bool
     {
         return $this->request(
             "object/by-ref-id/{ref_id}/has-access/by-id/{user_id}/{permission}",
