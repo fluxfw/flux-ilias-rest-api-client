@@ -35,6 +35,7 @@ use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosit
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionIdDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitStaff\OrganisationalUnitStaffDto;
+use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Permission\Permission;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Role\RoleDiffDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Role\RoleDto;
 use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ScormLearningModule\ScormLearningModuleDiffDto;
@@ -2168,6 +2169,21 @@ class IliasRestApiClient
                 "multi_fields"              => $multi_fields,
                 "preferences"               => $preferences,
                 "user_defined_fields"       => $user_defined_fields
+            ]
+        );
+    }
+
+
+    public function hasAccessInObject(int $ref_id, int $user_id, Permission $permission) : bool
+    {
+        return $this->request(
+            "object/by-ref-id/{ref_id}/has-access/by-id/{user_id}/{permission}",
+            null,
+            null,
+            [
+                "ref_id"     => $ref_id,
+                "user_id"    => $user_id,
+                "permission" => $permission
             ]
         );
     }

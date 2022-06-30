@@ -4,12 +4,34 @@
 
 Changes:
 
-- Not use CURLFile directly
+\-
 
 Get build:
 
 - Docker image: `docker-registry.fluxpublisher.ch/flux-ilias-api/rest-api-client:latest`
 - Archive: https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=latest
+
+## v2022-06-30-2
+
+Changes:
+
+- Permission
+
+Get build:
+
+- Docker image: `docker-registry.fluxpublisher.ch/flux-ilias-api/rest-api-client:v2022-06-30-2`
+- Archive: https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=v2022-06-30-2
+
+## v2022-06-30-1
+
+Changes:
+
+- Not use CURLFile directly
+
+Get build:
+
+- Docker image: `docker-registry.fluxpublisher.ch/flux-ilias-api/rest-api-client:v2022-06-30-1`
+- Archive: https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=v2022-06-30-1
 
 ## v2022-06-29-4
 
