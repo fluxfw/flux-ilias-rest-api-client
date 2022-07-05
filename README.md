@@ -9,18 +9,18 @@ Hint: Use `latest` as `%tag%` (or omit it) for get the latest build
 ### Non-Composer
 
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-ilias-api/rest-api-client:%tag% /flux-ilias-rest-api-client /%path%/libs/flux-ilias-rest-api-client
+COPY --from=docker-registry.fluxpublisher.ch/flux-ilias-rest-api-client:%tag% /flux-ilias-rest-api-client /%path%/libs/flux-ilias-rest-api-client
 ```
 
 or
 
 ```dockerfile
-RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=%tag% | tar -xz --strip-components=1)
+RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag% | tar -xz --strip-components=1)
 ```
 
 or
 
-Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-ilias-rest-api-client`
+Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-ilias-rest-api-client`
 
 Hint: If you use `wget` without pipe use `--content-disposition` to get the correct file name
 
@@ -41,7 +41,7 @@ require_once __DIR__ . "/%path%/libs/flux-ilias-rest-api-client/autoload.php";
                 "name": "flux/flux-ilias-rest-api-client",
                 "version": "%tag%",
                 "dist": {
-                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-api/rest-api-client.tar.gz?tag=%tag%",
+                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag%",
                     "type": "tar"
                 },
                 "autoload": {
