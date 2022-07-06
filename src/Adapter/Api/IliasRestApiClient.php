@@ -52,6 +52,7 @@ use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\Schema\Default
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\BodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\FormDataBodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\JsonBodyDto;
+use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\TextBodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\Type\DefaultBodyType;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Client\ClientRequestDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Header\DefaultHeaderKey;
@@ -3852,12 +3853,12 @@ class IliasRestApiClient
             )
         );
 
-        if ($response === null || $response->status === DefaultStatus::_404) {
+        if ($response === null || ($response->status === DefaultStatus::_404 && $response->parsed_body instanceof TextBodyDto && $response->parsed_body->text !== "Route not found")) {
             return null;
         }
 
         if ($response->status !== DefaultStatus::_200) {
-            throw new Exception("Response status " . $response->status->value);
+            throw new Exception("Response status " . $response->status->value . ": " . $response->raw_body);
         }
 
         $response_body = $response->parsed_body;
