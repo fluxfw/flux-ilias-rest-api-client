@@ -11,6 +11,17 @@ Get build:
 - Docker image: `docker-registry.fluxpublisher.ch/flux-ilias-rest-api-client:latest`
 - Archive: https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=latest
 
+## v2022-07-06-1
+
+Changes:
+
+- Exception on "Route not found"
+
+Get build:
+
+- Docker image: `docker-registry.fluxpublisher.ch/flux-ilias-rest-api-client:v2022-07-06-1`
+- Archive: https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=v2022-07-06-1
+
 ## v2022-07-05-1
 
 Changes:
