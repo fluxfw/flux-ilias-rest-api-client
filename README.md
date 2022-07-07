@@ -4,8 +4,6 @@ ILIAS Rest Api Client
 
 ## Installation
 
-Hint: Use `latest` as `%tag%` (or omit it) for get the latest build
-
 ### Non-Composer
 
 ```dockerfile
@@ -15,14 +13,12 @@ COPY --from=docker-registry.fluxpublisher.ch/flux-ilias-rest-api-client:%tag% /f
 or
 
 ```dockerfile
-RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag% | tar -xz --strip-components=1)
+RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz | tar -xz --strip-components=1)
 ```
 
 or
 
-Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-ilias-rest-api-client`
-
-Hint: If you use `wget` without pipe use `--content-disposition` to get the correct file name
+Download https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-ilias-rest-api-client`
 
 #### Usage
 
@@ -41,7 +37,7 @@ require_once __DIR__ . "/%path%/libs/flux-ilias-rest-api-client/autoload.php";
                 "name": "flux/flux-ilias-rest-api-client",
                 "version": "%tag%",
                 "dist": {
-                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-ilias-rest-api-client.tar.gz?tag=%tag%",
+                    "url": "https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz",
                     "type": "tar"
                 },
                 "autoload": {
