@@ -7,12 +7,6 @@ ILIAS Rest Api Client
 ### Non-Composer
 
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-ilias-rest-api-client:%tag% /flux-ilias-rest-api-client /%path%/libs/flux-ilias-rest-api-client
-```
-
-or
-
-```dockerfile
 RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz | tar -xz --strip-components=1)
 ```
 
