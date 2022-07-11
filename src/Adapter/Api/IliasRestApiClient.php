@@ -3845,6 +3845,7 @@ class IliasRestApiClient
                 $headers,
                 $body,
                 $route_params,
+                null,
                 true,
                 false,
                 false,
