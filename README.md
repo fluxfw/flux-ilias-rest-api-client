@@ -9,12 +9,12 @@ ILIAS Rest Api Client
 #### Download
 
 ```dockerfile
-RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz | tar -xz --strip-components=1)
+RUN (mkdir -p /%path%/libs/flux-ilias-rest-api-client && cd /%path%/libs/flux-ilias-rest-api-client && wget -O - https://github.com/fluxfw/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz | tar -xz --strip-components=1)
 ```
 
 or
 
-Download https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-ilias-rest-api-client`
+Download https://github.com/fluxfw/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-ilias-rest-api-client`
 
 #### Load
 
@@ -33,7 +33,7 @@ require_once __DIR__ . "/%path%/libs/flux-ilias-rest-api-client/autoload.php";
                 "name": "flux/flux-ilias-rest-api-client",
                 "version": "%tag%",
                 "dist": {
-                    "url": "https://github.com/flux-eco/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz",
+                    "url": "https://github.com/fluxfw/flux-ilias-rest-api-client/releases/download/%tag%/flux-ilias-rest-api-client-%tag%-build.tar.gz",
                     "type": "tar"
                 },
                 "autoload": {
