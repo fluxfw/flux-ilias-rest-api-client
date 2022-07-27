@@ -6,6 +6,15 @@ Changes:
 
 \-
 
+## v2022-07-27-1
+
+Changes:
+
+- Get objects by title
+- Get children by type or title
+- Get users by external account, login or email
+- Check required environment variables
+
 ## v2022-07-12-1
 
 Changes:
