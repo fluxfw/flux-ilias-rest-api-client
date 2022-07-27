@@ -1317,7 +1317,7 @@ class IliasRestApiClient
     /**
      * @return ObjectDto[]|null
      */
-    public function getChildrenById(int $id, bool $ref_ids = false) : ?array
+    public function getChildrenById(int $id, ?ObjectType $type = null, ?string $title = null, bool $ref_ids = false) : ?array
     {
         return $this->request(
             "object/children/by-id/{id}",
@@ -1327,6 +1327,8 @@ class IliasRestApiClient
                 "id" => $id
             ],
             [
+                "type"    => $type,
+                "title"   => $title,
                 "ref_ids" => $ref_ids
             ]
         );
@@ -1336,7 +1338,7 @@ class IliasRestApiClient
     /**
      * @return ObjectDto[]|null
      */
-    public function getChildrenByImportId(string $import_id, bool $ref_ids = false) : ?array
+    public function getChildrenByImportId(string $import_id, ?ObjectType $type = null, ?string $title = null, bool $ref_ids = false) : ?array
     {
         return $this->request(
             "object/children/by-import-id/{import_id}",
@@ -1346,6 +1348,8 @@ class IliasRestApiClient
                 "import_id" => $import_id
             ],
             [
+                "type"    => $type,
+                "title"   => $title,
                 "ref_ids" => $ref_ids
             ]
         );
@@ -1355,7 +1359,7 @@ class IliasRestApiClient
     /**
      * @return ObjectDto[]|null
      */
-    public function getChildrenByRefId(int $ref_id, bool $ref_ids = false) : ?array
+    public function getChildrenByRefId(int $ref_id, ?ObjectType $type = null, ?string $title = null, bool $ref_ids = false) : ?array
     {
         return $this->request(
             "object/children/by-ref-id/{ref_id}",
@@ -1365,6 +1369,8 @@ class IliasRestApiClient
                 "ref_id" => $ref_id
             ],
             [
+                "type"    => $type,
+                "title"   => $title,
                 "ref_ids" => $ref_ids
             ]
         );
@@ -1760,7 +1766,7 @@ class IliasRestApiClient
     /**
      * @return ObjectDto[]
      */
-    public function getObjects(ObjectType $type, bool $ref_ids = false) : array
+    public function getObjects(ObjectType $type, ?string $title = null, bool $ref_ids = false) : array
     {
         return $this->request(
             "objects/{type}",
@@ -1770,6 +1776,7 @@ class IliasRestApiClient
                 "type" => $type
             ],
             [
+                "title"   => $title,
                 "ref_ids" => $ref_ids
             ]
         );
@@ -2158,14 +2165,24 @@ class IliasRestApiClient
     /**
      * @return UserDto[]
      */
-    public function getUsers(bool $access_limited_object_ids = false, bool $multi_fields = false, bool $preferences = false, bool $user_defined_fields = false) : array
-    {
+    public function getUsers(
+        ?string $external_account = null,
+        ?string $login = null,
+        ?string $email = null,
+        bool $access_limited_object_ids = false,
+        bool $multi_fields = false,
+        bool $preferences = false,
+        bool $user_defined_fields = false
+    ) : array {
         return $this->request(
             "users",
             UserDto::class,
             null,
             null,
             [
+                "external_account"          => $external_account,
+                "login"                     => $login,
+                "email"                     => $email,
                 "access_limited_object_ids" => $access_limited_object_ids,
                 "multi_fields"              => $multi_fields,
                 "preferences"               => $preferences,
