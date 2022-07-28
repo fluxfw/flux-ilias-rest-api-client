@@ -54,10 +54,10 @@ require_once __DIR__ . "/%path%/libs/flux-ilias-rest-api-client/autoload.php";
 
 | Variable | Description | Default value |
 |----------| ----------- | ------------- |
-| **FLUX_ILIAS_REST_API_CLIENT_URL** | ILIAS url | - |
+| **FLUX_ILIAS_REST_API_CLIENT_URL** | ILIAS url | *-* |
 | FLUX_ILIAS_REST_API_CLIENT_CLIENT | ILIAS client<br>Use *FLUX_ILIAS_REST_API_CLIENT_CLIENT_FILE* for docker secrets | default |
-| **FLUX_ILIAS_REST_API_CLIENT_USER** | ILIAS user<br>Use *FLUX_ILIAS_REST_API_CLIENT_USER_FILE* for docker secrets | - |
-| **FLUX_ILIAS_REST_API_CLIENT_PASSWORD** | ILIAS password<br>Use *FLUX_ILIAS_REST_API_CLIENT_PASSWORD_FILE* for docker secrets | - |
+| **FLUX_ILIAS_REST_API_CLIENT_USER** | ILIAS user<br>Use *FLUX_ILIAS_REST_API_CLIENT_USER_FILE* for docker secrets | *-* |
+| **FLUX_ILIAS_REST_API_CLIENT_PASSWORD** | ILIAS password<br>Use *FLUX_ILIAS_REST_API_CLIENT_PASSWORD_FILE* for docker secrets | *-* |
 | FLUX_ILIAS_REST_API_CLIENT_TRUST_SELF_SIGNED_CERTIFICATE | If you use a self signed certificate, you need to trust it manually | false |
 | FLUX_ILIAS_REST_API_CLIENT_NGINX_SERVER | If flux-ilias-rest-api is on a Nginx server, you need to enable a workaround for supports all HTTP methods, you need to disable it for support Apache | true |
 
