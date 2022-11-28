@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-11-28-1
+
+Changes:
+
+- Fix enroll member to course
+
 ## v2022-08-02-1
 
 Changes:
