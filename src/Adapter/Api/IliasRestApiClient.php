@@ -91,9 +91,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
@@ -111,9 +109,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
@@ -131,9 +127,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
@@ -151,9 +145,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
@@ -171,9 +163,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
@@ -191,9 +181,7 @@ class IliasRestApiClient
             ],
             null,
             JsonBodyDto::new(
-                JsonBodyDto::new(
-                    $diff
-                )
+                $diff
             )
         );
     }
