@@ -51,6 +51,7 @@ use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\ParseHttpBasic
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\Schema\DefaultAuthorizationSchema;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\BodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\FormDataBodyDto;
+use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\HtmlBodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\JsonBodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\TextBodyDto;
 use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\Type\DefaultBodyType;
@@ -3865,7 +3866,7 @@ class IliasRestApiClient
             return null;
         }
 
-        if ($response->status !== DefaultStatus::_200) {
+        if ($response->status !== DefaultStatus::_200 || ($response->status === DefaultStatus::_200 && $response->parsed_body instanceof HtmlBodyDto && $response->parsed_body->html === "Client does not exist.")) {
             throw new Exception("Response status " . $response->status->value . ": " . $response->raw_body);
         }
 

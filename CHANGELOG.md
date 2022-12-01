@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-12-01-1
+
+Changes:
+
+- Error if invalid ILIAS core client response
+
 ## v2022-11-28-1
 
 Changes:
