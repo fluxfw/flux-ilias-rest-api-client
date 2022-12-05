@@ -3871,11 +3871,17 @@ class IliasRestApiClient
         }
 
         $response_body = $response->parsed_body;
-        if ($response_body instanceof JsonBodyDto) {
-            $response_body = $response_body->data;
-        }
 
         if ($response_dto_class !== null && $response_body !== null) {
+            if (!($response_body instanceof JsonBodyDto)) {
+                throw new Exception("Unsupported response");
+            }
+
+            $response_body = $response_body->data;
+            if ($response_body === null) {
+                return null;
+            }
+
             $newFromObject = [$response_dto_class, "newFromObject"];
             if (is_array($response_body)) {
                 $response_body = array_map($newFromObject, $response_body);
@@ -3885,6 +3891,10 @@ class IliasRestApiClient
                 } else {
                     throw new Exception("Unsupported response");
                 }
+            }
+        } else {
+            if ($response_body instanceof JsonBodyDto) {
+                $response_body = $response_body->data;
             }
         }
 

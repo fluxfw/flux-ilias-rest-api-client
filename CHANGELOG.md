@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-12-05-1
+
+Changes:
+
+- Check JSON response
+
 ## v2022-12-01-1
 
 Changes:
