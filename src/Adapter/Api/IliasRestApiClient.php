@@ -3878,6 +3878,9 @@ class IliasRestApiClient
             }
 
             $response_body = $response_body->data;
+            if ($response_body === null) {
+                return null;
+            }
 
             $newFromObject = [$response_dto_class, "newFromObject"];
             if (is_array($response_body)) {
