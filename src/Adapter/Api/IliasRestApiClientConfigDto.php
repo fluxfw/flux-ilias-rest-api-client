@@ -3,6 +3,7 @@
 namespace FluxIliasRestApiClient\Adapter\Api;
 
 use Exception;
+use SensitiveParameter;
 
 class IliasRestApiClientConfigDto
 {
@@ -22,7 +23,7 @@ class IliasRestApiClientConfigDto
     public static function new(
         string $url,
         string $user,
-        string $password,
+        #[SensitiveParameter] string $password,
         ?string $client = null,
         ?bool $trust_self_signed_certificate = null,
         ?bool $nginx_server = null

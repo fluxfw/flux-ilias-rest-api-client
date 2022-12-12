@@ -53,7 +53,7 @@ require_once __DIR__ . "/%path%/libs/flux-ilias-rest-api-client/autoload.php";
 ## Environment variables
 
 | Variable | Description | Default value |
-|----------| ----------- | ------------- |
+| -------- | ----------- | ------------- |
 | **FLUX_ILIAS_REST_API_CLIENT_URL** | ILIAS url | *-* |
 | FLUX_ILIAS_REST_API_CLIENT_CLIENT | ILIAS client<br>Use *FLUX_ILIAS_REST_API_CLIENT_CLIENT_FILE* for docker secrets | default |
 | **FLUX_ILIAS_REST_API_CLIENT_USER** | ILIAS user<br>Use *FLUX_ILIAS_REST_API_CLIENT_USER_FILE* for docker secrets | *-* |
