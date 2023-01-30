@@ -3,63 +3,63 @@
 namespace FluxIliasRestApiClient\Adapter\Api;
 
 use Exception;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Category\CategoryDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Category\CategoryDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Change\ChangeDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Course\CourseDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Course\CourseDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\CourseMember\CourseMemberDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\CourseMember\CourseMemberDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\CourseMember\CourseMemberIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\File\FileDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\File\FileDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\FluxIliasRestObject\FluxIliasRestObjectDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\FluxIliasRestObject\FluxIliasRestObjectDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Group\GroupDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Group\GroupDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\GroupMember\GroupMemberDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\GroupMember\GroupMemberDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\GroupMember\GroupMemberIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Object\ObjectDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Object\ObjectDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Object\ObjectIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Object\ObjectType;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgress;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgressDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgressIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionCoreIdentifier;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\OrganisationalUnitStaff\OrganisationalUnitStaffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Permission\Permission;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Role\RoleDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\Role\RoleDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ScormLearningModule\ScormLearningModuleDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\ScormLearningModule\ScormLearningModuleDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\User\UserDiffDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\User\UserDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\User\UserIdDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\UserFavourite\UserFavouriteDto;
-use FluxIliasRestApiClient\Libs\FluxIliasBaseApi\Adapter\UserRole\UserRoleDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Api\RestApi;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\ParseHttp\ParseHttpAuthorization_;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\ParseHttpBasic\ParseHttpBasicAuthorization_;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Authorization\Schema\DefaultAuthorizationSchema;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\BodyDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\FormDataBodyDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\HtmlBodyDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\JsonBodyDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\TextBodyDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Body\Type\DefaultBodyType;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Client\ClientRequestDto;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Header\DefaultHeaderKey;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Method\DefaultMethod;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Method\Method;
-use FluxIliasRestApiClient\Libs\FluxRestApi\Adapter\Status\DefaultStatus;
+use FluxIliasBaseApi\Adapter\Category\CategoryDiffDto;
+use FluxIliasBaseApi\Adapter\Category\CategoryDto;
+use FluxIliasBaseApi\Adapter\Change\ChangeDto;
+use FluxIliasBaseApi\Adapter\Course\CourseDiffDto;
+use FluxIliasBaseApi\Adapter\Course\CourseDto;
+use FluxIliasBaseApi\Adapter\CourseMember\CourseMemberDiffDto;
+use FluxIliasBaseApi\Adapter\CourseMember\CourseMemberDto;
+use FluxIliasBaseApi\Adapter\CourseMember\CourseMemberIdDto;
+use FluxIliasBaseApi\Adapter\File\FileDiffDto;
+use FluxIliasBaseApi\Adapter\File\FileDto;
+use FluxIliasBaseApi\Adapter\FluxIliasRestObject\FluxIliasRestObjectDiffDto;
+use FluxIliasBaseApi\Adapter\FluxIliasRestObject\FluxIliasRestObjectDto;
+use FluxIliasBaseApi\Adapter\Group\GroupDiffDto;
+use FluxIliasBaseApi\Adapter\Group\GroupDto;
+use FluxIliasBaseApi\Adapter\GroupMember\GroupMemberDiffDto;
+use FluxIliasBaseApi\Adapter\GroupMember\GroupMemberDto;
+use FluxIliasBaseApi\Adapter\GroupMember\GroupMemberIdDto;
+use FluxIliasBaseApi\Adapter\Object\ObjectDiffDto;
+use FluxIliasBaseApi\Adapter\Object\ObjectDto;
+use FluxIliasBaseApi\Adapter\Object\ObjectIdDto;
+use FluxIliasBaseApi\Adapter\Object\ObjectType;
+use FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgress;
+use FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgressDto;
+use FluxIliasBaseApi\Adapter\ObjectLearningProgress\ObjectLearningProgressIdDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitDiffDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnit\OrganisationalUnitIdDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionCoreIdentifier;
+use FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionDiffDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnitPosition\OrganisationalUnitPositionIdDto;
+use FluxIliasBaseApi\Adapter\OrganisationalUnitStaff\OrganisationalUnitStaffDto;
+use FluxIliasBaseApi\Adapter\Permission\Permission;
+use FluxIliasBaseApi\Adapter\Role\RoleDiffDto;
+use FluxIliasBaseApi\Adapter\Role\RoleDto;
+use FluxIliasBaseApi\Adapter\ScormLearningModule\ScormLearningModuleDiffDto;
+use FluxIliasBaseApi\Adapter\ScormLearningModule\ScormLearningModuleDto;
+use FluxIliasBaseApi\Adapter\User\UserDiffDto;
+use FluxIliasBaseApi\Adapter\User\UserDto;
+use FluxIliasBaseApi\Adapter\User\UserIdDto;
+use FluxIliasBaseApi\Adapter\UserFavourite\UserFavouriteDto;
+use FluxIliasBaseApi\Adapter\UserRole\UserRoleDto;
+use FluxRestApi\Adapter\Api\RestApi;
+use FluxRestApi\Adapter\Authorization\ParseHttp\ParseHttpAuthorization_;
+use FluxRestApi\Adapter\Authorization\ParseHttpBasic\ParseHttpBasicAuthorization_;
+use FluxRestApi\Adapter\Authorization\Schema\DefaultAuthorizationSchema;
+use FluxRestApi\Adapter\Body\BodyDto;
+use FluxRestApi\Adapter\Body\FormDataBodyDto;
+use FluxRestApi\Adapter\Body\HtmlBodyDto;
+use FluxRestApi\Adapter\Body\JsonBodyDto;
+use FluxRestApi\Adapter\Body\TextBodyDto;
+use FluxRestApi\Adapter\Body\Type\DefaultBodyType;
+use FluxRestApi\Adapter\Client\ClientRequestDto;
+use FluxRestApi\Adapter\Header\DefaultHeaderKey;
+use FluxRestApi\Adapter\Method\DefaultMethod;
+use FluxRestApi\Adapter\Method\Method;
+use FluxRestApi\Adapter\Status\DefaultStatus;
 
 class IliasRestApiClient
 {
@@ -3834,8 +3834,7 @@ class IliasRestApiClient
             DefaultHeaderKey::ACCEPT->value        => DefaultBodyType::JSON->value,
             DefaultHeaderKey::AUTHORIZATION->value => DefaultAuthorizationSchema::BASIC->value . ParseHttpAuthorization_::SPLIT_SCHEMA_PARAMETERS
                 . base64_encode($this->ilias_rest_api_client_config->client . "/"
-                    . $this->ilias_rest_api_client_config->user . ParseHttpBasicAuthorization_::SPLIT_USER_PASSWORD . $this->ilias_rest_api_client_config->password),
-            DefaultHeaderKey::USER_AGENT->value    => "flux-ilias-api"
+                    . $this->ilias_rest_api_client_config->user . ParseHttpBasicAuthorization_::SPLIT_USER_PASSWORD . $this->ilias_rest_api_client_config->password)
         ];
 
         $method ??= DefaultMethod::GET;
