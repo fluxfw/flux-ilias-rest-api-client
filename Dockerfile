@@ -1,10 +1,11 @@
 FROM php:8.2-cli-alpine AS build
 
-RUN (mkdir -p /build/flux-ilias-rest-api-client/libs/flux-ilias-base-api && cd /build/flux-ilias-rest-api-client/libs/flux-ilias-base-api && wget -O - https://github.com/fluxfw/flux-ilias-base-api/archive/refs/tags/v2023-01-30-1.tar.gz | tar -xz --strip-components=1)
+COPY bin/install-libraries.sh /build/flux-ilias-rest-api-client-build/libs/flux-ilias-rest-api-client/bin/install-libraries.sh
+RUN /build/flux-ilias-rest-api-client-build/libs/flux-ilias-rest-api-client/bin/install-libraries.sh
 
-RUN (mkdir -p /build/flux-ilias-rest-api-client/libs/flux-rest-api && cd /build/flux-ilias-rest-api-client/libs/flux-rest-api && wget -O - https://github.com/fluxfw/flux-rest-api/archive/refs/tags/v2023-01-30-1.tar.gz | tar -xz --strip-components=1)
+COPY . /build/flux-ilias-rest-api-client-build/libs/flux-ilias-rest-api-client
 
-COPY . /build/flux-ilias-rest-api-client
+RUN cp -L -R /build/flux-ilias-rest-api-client-build/libs/flux-ilias-rest-api-client /build/flux-ilias-rest-api-client && rm -rf /build/flux-ilias-rest-api-client/bin && rm -rf /build/flux-ilias-rest-api-client-build
 
 FROM scratch
 
